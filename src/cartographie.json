@@ -1,0 +1,687 @@
+{
+  "data": [
+    {
+      "data": {
+        "repos": [],
+        "assets": [
+          {
+            "id": "CL-01",
+            "keep": true,
+            "name": "K001 (Auticap)",
+            "examples": [
+              "Selon un exemple, ce composant permet un filtrage intelligent des cartes CPS afin d’éviter la lecture du mode sans contact lorsqu’une carte professionnelle de santé est insérée en permanence.",
+              "Selon un exemple, le système de mise à jour sans bouton ni écran se déclenche par l’insertion de cartes à l’envers, le lecteur se présentant alors comme un disque USB pour le glisser‑déposer du fichier de mise à jour.",
+              "Selon un exemple, les paramètres du lecteur (activation du NFC, filtrage des CPS, réglage des puissances) sont configurables via des commandes ESCAPE depuis le poste de travail."
+            ],
+            "exploits": [
+              "K100",
+              "K300"
+            ],
+            "logiciel": null,
+            "description": "Le K001 (Auticap) est un lecteur de cartes « 3 en 1 » destiné aux professionnels de santé. Il intègre deux connecteurs cartes contact (Carte Vitale et CPS) et une antenne sans contact, se connecte au poste de travail via USB et communique selon le protocole PCSC. Le lecteur permet la facturation en lisant les droits administratifs de la Carte Vitale et l’authentification du professionnel via la Carte Professionnelle de Santé (CPS), tout en filtrant intelligemment les lectures sans contact de la CPS pour éviter les blocages.\n\nSur le plan logiciel, le K001 comporte un système de mise à jour innovant déclenché par l’insertion de cartes à l’envers, sans bouton ni écran, utilisant une clé RSA embarquée pour vérifier l’authenticité et l’intégrité du firmware. L’appareil est entièrement paramétrable depuis le PC grâce à des commandes ESCAPE qui permettent d’activer ou de désactiver le NFC, de régler les puissances et de choisir les types de cartes acceptées. L’architecture « 3 en 1 » constitue son avantage concurrentiel en regroupant trois lecteurs distincts en un seul boîtier.",
+            "originalite": "Le filtre de détection de la CPS basé sur l’identification de la « plaque d’immatriculation » de la carte, le mécanisme de mise à jour déclenché par des cartes insérées à l’envers, l’usage de clés RSA embarquées pour la signature du firmware, ainsi que la paramétrabilité via les commandes ESCAPE constituent les éléments d’originalité identifiés pour le K001.",
+            "valorisation": [
+              {
+                "kind": "enrichissement",
+                "text": "Ajout d’un filtre logiciel permettant de différencier la CPS en mode contact et sans contact, ainsi que d’un mécanisme de mise à jour auto‑porteuse sécurisé par RSA."
+              },
+              {
+                "kind": "horizontal",
+                "text": "Réutilisation du contrôleur et du firmware du K001 dans les produits K100 et K300, ce qui crée des synergies techniques entre les gammes."
+              },
+              {
+                "kind": "vertical",
+                "text": "Possibilité d’étendre les services à distance (mise à jour, configuration) et d’intégrer de nouvelles fonctions logicielles (ex. activation du NFC) grâce aux commandes ESCAPE, ouvrant de nouvelles sources de valeur pour les clients."
+              }
+            ],
+            "identification": "[non mentionné dans le transcript]",
+            "risques_juridiques": [],
+            "require_senior_review": false,
+            "require_technical_review": false,
+            "require_client_clarification": false
+          },
+          {
+            "id": "CL-02",
+            "keep": true,
+            "name": "K100 (Cap’n Line 2)",
+            "examples": [
+              "Selon un exemple, le K100 permet la lecture simultanée de cartes contact et sans contact tout en filtrant la carte CPS grâce à son système de filtrage intelligent.",
+              "Selon un exemple, l’ajout d’un écran couleur tactile et de la connectivité Wi‑Fi fait du K100 un terminal sécurisé et connecté, capable de proposer la signature numérisée et le service Cap’n Match."
+            ],
+            "exploits": [
+              "K001"
+            ],
+            "logiciel": null,
+            "description": "Le K100, nommé « Cap’n Line 2 », est un terminal sécurisé multi‑applicatif destiné aux professionnels de santé. Il reprend les fonctions de base du K001 (lecture de cartes Vitale et CPS, filtrage intelligent des cartes CPS) et les enrichit avec un écran couleur tactile, une connectivité Wi‑Fi/Internet et des services additionnels comme la signature numérisée et le service Cap’n Match. Le produit se présente comme un dispositif autonome capable de se mettre à jour à distance et de proposer de nouvelles fonctionnalités sans intervention locale.",
+            "originalite": "Intégration d’un écran couleur tactile et d’une connectivité Wi‑Fi dans un terminal sécurisé, permettant la signature numérisée, l’activation de services à distance (Cap’n Match) et la mise à jour logicielle sans bouton ni écran via des cartes à l’envers.",
+            "valorisation": [
+              {
+                "kind": "enrichissement",
+                "text": "Enrichissement via l’ajout d’un écran tactile couleur et de la connectivité Wi‑Fi, augmentant les fonctionnalités offertes aux professionnels de santé."
+              },
+              {
+                "kind": "horizontal",
+                "text": "Possibilité d’étendre la solution à d’autres terminaux (fixes ou nomades) en réutilisant le même code embarqué et les mêmes blocs fonctionnels que le K001."
+              },
+              {
+                "kind": "vertical",
+                "text": "Intégration de services de mise à jour à distance, de signature numérique et de fonctionnalités logicielles additionnelles, renforçant la chaîne de valeur du produit."
+              }
+            ],
+            "identification": "[non mentionné dans le transcript]",
+            "risques_juridiques": [
+              {
+                "risk_name": "[non mentionné dans le transcript]",
+                "recommendation": "[non mentionné dans le transcript]"
+              }
+            ],
+            "require_senior_review": false,
+            "require_technical_review": false,
+            "require_client_clarification": false
+          },
+          {
+            "id": "CL-03",
+            "keep": true,
+            "name": "K300 (Cap Inside)",
+            "examples": [
+              "Selon un exemple, le K300 reprend les fonctionnalités du K001 et les rend nomades et autonomes.",
+              "Selon un exemple, le K300 fonctionne en zone blanche en conservant l’intelligence localement, sans recours au cloud.",
+              "Selon un exemple, le K300 utilise le même mécanisme de mise à jour via cartes à l’envers que le K001."
+            ],
+            "exploits": [
+              "K001"
+            ],
+            "logiciel": null,
+            "description": "K300, désigné comme « Cap Inside », est une solution logicielle nomade autonome destinée aux professionnels de santé. Elle reprend les fonctionnalités de base du lecteur K001 (filtrage intelligent des cartes, gestion de la CPS) et les rend portables, permettant une utilisation en zone blanche grâce à la conservation locale de toute l’intelligence (pas de dépendance au cloud). Le dispositif agit comme un serveur portable sécurisé qui interagit avec des applications mobiles (iPhone, Android) pour la facturation de bout en bout, même en l’absence de connexion réseau.",
+            "originalite": "Le caractère original du K300 repose sur la combinaison d’une solution logicielle autonome, capable de fonctionner hors connexion (zone blanche), et sur la réutilisation du filtrage intelligent et du mécanisme de mise à jour du K001 dans un facteur de forme portable.",
+            "valorisation": [
+              {
+                "kind": "enrichissement",
+                "text": "Enrichissement fonctionnel : ajout de capacités nomades et autonomes à la base K001, permettant une facturation hors ligne."
+              },
+              {
+                "kind": "horizontal",
+                "text": "Valorisation horizontale : réutilisation du filtrage intelligent et du système de mise à jour du K001 dans un appareil nomade."
+              },
+              {
+                "kind": "vertical",
+                "text": "Valorisation verticale : extension du logiciel vers une solution serveur portable qui interagit avec des applications mobiles pour la facturation."
+              }
+            ],
+            "identification": "[non mentionné dans le transcript]",
+            "risques_juridiques": [],
+            "require_senior_review": false,
+            "require_technical_review": false,
+            "require_client_clarification": false
+          },
+          {
+            "id": "CL-04",
+            "keep": true,
+            "name": "Cap’n Mage service",
+            "examples": [
+              "Selon un exemple, ce service permet la mise à jour à distance de la carte vitale via un serveur d’assurance maladie.",
+              "Selon un exemple, l’activation du service se fait à distance en saisissant un numéro de contrat, sans bouton ni écran sur le lecteur."
+            ],
+            "exploits": [
+              "K002"
+            ],
+            "logiciel": null,
+            "description": "Le service Cap’n Mage est un service de télémise à jour de la carte Vitale proposé par Capels. Il permet, à distance et via la saisie d’un numéro de contrat, d’activer le service sur un lecteur (ou borne K002 Cap & Care) et de connecter le lecteur au serveur de l’assurance maladie afin de récupérer les informations de la carte et de les écrire sur la carte Vitale du patient. Le service se déploie sur la borne K002 et sur d’autres petits lecteurs, offrant ainsi une mise à jour automatisée sans besoin d’intervention locale.",
+            "originalite": "Originalité : activation à distance du service via un numéro de contrat et mise à jour automatisée de la carte vitale.",
+            "valorisation": [
+              {
+                "kind": "enrichissement",
+                "text": "Le service ajoute une fonction de mise à jour à distance, évitant les interventions locales de maintenance."
+              },
+              {
+                "kind": "horizontal",
+                "text": "Le service peut être déployé sur la borne K002 Cap & Care et potentiellement sur d’autres terminaux Cap’n Mage."
+              },
+              {
+                "kind": "vertical",
+                "text": "Il intègre la communication sécurisée avec le serveur de l’assurance maladie, enrichissant l’offre logicielle du produit."
+              }
+            ],
+            "identification": "[non mentionné dans le transcript]",
+            "risques_juridiques": [
+              {
+                "risk_name": "non conformité au référentiel Sésame Vitale",
+                "recommendation": "Vérifier que le protocole de mise à jour respecte les spécifications du GIE Sésame Vitale et procéder à des tests de conformité."
+              }
+            ],
+            "require_senior_review": false,
+            "require_technical_review": false,
+            "require_client_clarification": false
+          },
+          {
+            "id": "INT-01",
+            "keep": true,
+            "name": "K100 GUI",
+            "examples": [
+              "Selon un exemple, le K100 intègre un écran tactile couleur et supporte plusieurs applications, ce qui le différencie du K001 qui ne possède pas d’affichage.",
+              "Selon un exemple, le K100 réutilise la logique de filtrage de cartes du K001 tout en ajoutant une interface graphique pour offrir une expérience utilisateur plus riche."
+            ],
+            "exploits": [
+              "K001"
+            ],
+            "logiciel": null,
+            "description": "Le K100 (Cap’n Line 2) est un terminal sécurisé multi‑applicatif qui reprend les fonctionnalités de base du K001 (lecteur 3 en 1) et y ajoute un écran tactile couleur. Il permet la lecture des cartes Vitale et CPS, la facturation et d’autres services grâce à une interface graphique, et il intègre la connectivité (Wi‑Fi, USB) nécessaire à une utilisation en zone blanche et à la mise à jour à distance.",
+            "originalite": null,
+            "valorisation": [
+              {
+                "kind": "enrichissement",
+                "text": "Ajout d’un écran tactile couleur et d’une interface graphique, élargissant la portée fonctionnelle du produit par rapport au K001."
+              },
+              {
+                "kind": "horizontal",
+                "text": "Réutilisation de la logique de filtrage de cartes et du firmware du K001 dans un format terminal sécurisé multi‑applicatif."
+              },
+              {
+                "kind": "vertical",
+                "text": "Passage d’un simple lecteur de cartes à un terminal complet intégrant facturation, mise à jour à distance et connectivité en zone blanche."
+              }
+            ],
+            "identification": "[non mentionné dans le transcript]",
+            "risques_juridiques": [],
+            "require_senior_review": false,
+            "require_technical_review": false,
+            "require_client_clarification": false
+          },
+          {
+            "id": "SG-01",
+            "keep": true,
+            "name": "Données Sui Generis Sésame Vitale",
+            "examples": [
+              "Selon un exemple, les données structurées relatives aux cartes Vitales peuvent être protégées en tant que droit sui generis lorsqu’elles sont organisées et enrichies pour permettre le service de télé‑mise à jour de la carte vitale.",
+              "Selon un exemple, la structuration de jeux de données d’entraînement constitue un actif sui generis qui peut être exploité indépendamment du matériel."
+            ],
+            "exploits": [],
+            "logiciel": null,
+            "description": "Le projet IP Box 2025 recense les « sui generis » comme une des catégories d’actifs valorisables, c’est‑à‑dire les données structurées et organisées, par exemple les bases de données ou les jeux de données d’entraînement. Le transcript ne décrit pas de façon détaillée le contenu précis de l’actif SG‑01, mais indique que ces données peuvent être protégées en tant que droit sui generis lorsqu’elles sont structurées, enrichies et utilisées pour fournir un service (ex. mise à jour de la carte Vitale). Aucun autre détail technique ou fonctionnel de SG‑01 n’est mentionné dans le transcript.",
+            "originalite": null,
+            "valorisation": [
+              {
+                "kind": "enrichissement",
+                "text": "Les données sui generis issues du lecteur K001 peuvent être agrégées et enrichies pour créer de nouveaux services de mise à jour de cartes Vitales, augmentant ainsi la valeur du jeu de données."
+              },
+              {
+                "kind": "horizontal",
+                "text": "Les mêmes données structurées peuvent être réutilisées dans d’autres services de santé (ex. services Cap’n Mage) pour fournir des fonctionnalités complémentaires, comme la mise à jour à distance."
+              },
+              {
+                "kind": "vertical",
+                "text": "L’exploitation des données sui generis s’appuie sur le matériel de terminal Sésame Vitale (lecteur K001) et s’intègre aux couches logicielles de facturation et de gestion des droits patients."
+              }
+            ],
+            "identification": "[non mentionné dans le transcript]",
+            "risques_juridiques": [
+              {
+                "risk_name": "Non conformité au référentiel GIE Sésame Vitale",
+                "recommendation": "Vérifier que l’utilisation, la structuration et la valorisation des données respectent les spécifications du GIE Sésame Vitale et les exigences de l’assurance maladie."
+              }
+            ],
+            "require_senior_review": false,
+            "require_technical_review": false,
+            "require_client_clarification": false
+          },
+          {
+            "id": "SA-01",
+            "keep": true,
+            "name": "Savoir‑faire de filtrage CPS",
+            "examples": [
+              "Selon un exemple, ce composant permet de filtrer les cartes CPS en mode sans contact afin d’éviter leur lecture lors de la lecture d’autres badges.",
+              "Selon un exemple, le filtrage repose sur l’identification d’une plaque d’immatriculation de la CPS et bloque la remontée des données au PC lorsqu’une CPS est détectée."
+            ],
+            "exploits": [
+              "K001"
+            ],
+            "logiciel": null,
+            "description": "Le savoir‑faire de filtrage CPS consiste en un mécanisme logiciel intégré aux lecteurs K001 qui identifie la carte professionnelle de santé (CPS) et empêche la lecture de son interface sans contact lorsqu’elle est insérée en permanence. Le système détecte la « plaque d’immatriculation » de la CPS, met le lecteur en tension cachée et bloque la remontée des données au PC si la carte est reconnue comme CPS, tout en transmettant normalement les badges standard. Ce filtrage est paramétrable via des commandes ESCAPE et s’appuie sur des signatures RSA pour sécuriser les mises à jour du firmware.",
+            "originalite": "Originalité du filtrage intelligent des cartes CPS, mise sous tension cachée pour intercepter la communication, détection de la carte via une plaque d’immatriculation, paramétrage complet par commandes ESCAPE, mise à jour du firmware sans bouton ni écran grâce à un mécanisme de cartes à l’envers, et vérification d’authenticité via des clés RSA embarquées.",
+            "valorisation": [
+              {
+                "kind": "enrichissement",
+                "text": "Ce savoir‑faire enrichit la gamme K001 en apportant une différenciation fonctionnelle qui n’existe pas dans les lecteurs standards du marché."
+              },
+              {
+                "kind": "horizontal",
+                "text": "Le même mécanisme de filtrage peut être réutilisé sur les produits dérivés K100, K300 et les futures générations de terminaux."
+              },
+              {
+                "kind": "vertical",
+                "text": "En intégrant ce filtrage, les produits Capels gagnent en valeur ajoutée pour le dossier IP Box, justifiant le caractère original et inventif du logiciel embarqué."
+              }
+            ],
+            "identification": "non identifié",
+            "risques_juridiques": [],
+            "require_senior_review": false,
+            "require_technical_review": false,
+            "require_client_clarification": false
+          },
+          {
+            "id": "INV-01",
+            "keep": true,
+            "name": "Mise à jour sans bouton via cartes à l’envers",
+            "examples": [
+              "Selon un exemple, le mode de mise à jour se déclenche lorsqu’on insère des cartes à l’envers dans le lecteur, sans aucun bouton ni écran.",
+              "Selon un exemple, le lecteur se comporte comme un disque dur USB, permettant le glisser‑déposer du fichier de mise à jour.",
+              "Selon un exemple, la mise à jour est authentifiée par une clé RSA publique intégrée dans le boot du lecteur, garantissant l’intégrité du firmware."
+            ],
+            "exploits": [
+              "K001"
+            ],
+            "logiciel": null,
+            "description": "Ce composant implémente un mode de mise à jour du firmware du lecteur de cartes sans bouton ni écran. L’activation s’opère par l’insertion de cartes à l’envers dans un ordre donné, ce qui déclenche le lecteur en mode mise à jour. Le lecteur se présente alors comme un disque dur USB, permettant de glisser‑déposer le fichier de mise à jour depuis le poste de travail. La mise à jour est sécurisée grâce à un système de clés RSA (publique/privée) embarqué dans le boot du lecteur, qui vérifie l’authenticité et l’intégrité du firmware avant d’accepter le nouveau paquet. Aucun logiciel dédié n’est requis sur le PC, ce qui simplifie considérablement la maintenance.",
+            "originalite": "Mise à jour sans bouton ni écran grâce à l’insertion de cartes à l’envers, déclenchant le mode mise à jour, avec authentification RSA du firmware.",
+            "valorisation": [
+              {
+                "kind": "enrichissement",
+                "text": "Le mécanisme d’auto‑mise à jour élimine le besoin d’un logiciel dédié sur le poste client, simplifiant la maintenance."
+              },
+              {
+                "kind": "horizontal",
+                "text": "Les mêmes blocs de mise à jour à cartes à l’envers ont été réutilisés dans la gamme 4x100, montrant son applicabilité à d’autres terminaux (K100, K300)."
+              },
+              {
+                "kind": "vertical",
+                "text": "Cette méthode permet de déployer des correctifs de sécurité et des évolutions logicielles sans intervention locale, renforçant la valeur du produit existant."
+              }
+            ],
+            "identification": "[non mentionné dans le transcript]",
+            "risques_juridiques": [],
+            "require_senior_review": false,
+            "require_technical_review": false,
+            "require_client_clarification": false
+          }
+        ],
+        "client": null,
+        "logiciels": [],
+        "definitions": {},
+        "contributors": []
+      },
+      "label": "cartographie",
+      "schema": {
+        "type": "object",
+        "$defs": {
+          "Client": {
+            "type": "object",
+            "title": "Client",
+            "required": [
+              "id",
+              "name",
+              "description"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "title": "Id",
+                "description": "Identifiant du client"
+              },
+              "name": {
+                "type": "string",
+                "title": "Name",
+                "description": "Nom du client"
+              },
+              "audit_goals": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "title": "Audit Goals",
+                "description": "Objectifs de la cartographie."
+              },
+              "description": {
+                "type": "string",
+                "title": "Description",
+                "description": "Description courte"
+              },
+              "is_business": {
+                "type": "boolean",
+                "title": "Is Business",
+                "default": false,
+                "description": "Si vrai, le client est une entreprise."
+              }
+            },
+            "description": "One client to a logiciel or project."
+          },
+          "Logiciel": {
+            "type": "object",
+            "title": "Logiciel",
+            "required": [
+              "id",
+              "name",
+              "description"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "title": "Id",
+                "description": "Identifiant du logiciel ou projet"
+              },
+              "name": {
+                "type": "string",
+                "title": "Name",
+                "description": "Nom du logiciel ou projet"
+              },
+              "description": {
+                "type": "string",
+                "title": "Description",
+                "description": "Description courte"
+              },
+              "contributors": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "title": "Contributors",
+                "description": "Identifiants des contributeurs du logiciel ou projet."
+              }
+            },
+            "description": "One logiciel or project."
+          },
+          "Contributor": {
+            "type": "object",
+            "title": "Contributor",
+            "required": [
+              "id",
+              "name",
+              "role",
+              "contribution"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "title": "Id",
+                "description": "Identifiant du contributeur (ex: 'CONTRIB-01', 'ORG-01')"
+              },
+              "name": {
+                "type": "string",
+                "title": "Name",
+                "description": "Nom du contributeur"
+              },
+              "role": {
+                "type": "string",
+                "title": "Role",
+                "description": "Rôle du contributeur"
+              },
+              "is_external": {
+                "type": "boolean",
+                "title": "Is External",
+                "default": false,
+                "description": "Si vrai, le contributeur est externe au client."
+              },
+              "contribution": {
+                "type": "string",
+                "title": "Contribution",
+                "description": "Contribution du contributeur"
+              },
+              "is_organization": {
+                "type": "boolean",
+                "title": "Is Organization",
+                "default": false,
+                "description": "Si vrai, le contributeur est une organisation."
+              }
+            },
+            "description": "One contributor to a logiciel or project. Used to designate possible authors of the logiciel or project."
+          },
+          "AssetEnriched": {
+            "type": "object",
+            "title": "AssetEnriched",
+            "required": [
+              "id",
+              "name",
+              "description",
+              "identification"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "title": "Id",
+                "description": "Identifiant (ex: CL-07)"
+              },
+              "keep": {
+                "type": "boolean",
+                "title": "Keep",
+                "default": true,
+                "description": "Si faux, l'actif sera ignoré lors des exports finaux"
+              },
+              "name": {
+                "type": "string",
+                "title": "Name",
+                "description": "Nom court du composant"
+              },
+              "examples": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "title": "Examples",
+                "description": "Phrases du type 'Selon un exemple, ce composant permet...'"
+              },
+              "exploits": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "title": "Exploits",
+                "description": "Liste d'ids d'actifs exploités (ex: ['SG-02'])"
+              },
+              "logiciel": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Logiciel",
+                "default": null,
+                "description": "Identifiant du logiciel ou projet"
+              },
+              "description": {
+                "type": "string",
+                "title": "Description",
+                "description": "Description en un ou deux paragraphes de ce que fait l'actif"
+              },
+              "originalite": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Originalite",
+                "default": null,
+                "description": "Éléments d'originalité si l'audit le prévoit, sinon vide"
+              },
+              "valorisation": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/ValorisationItem"
+                },
+                "title": "Valorisation",
+                "description": "Valorisation: enrichissement, horizontale, verticale"
+              },
+              "identification": {
+                "type": "string",
+                "title": "Identification",
+                "description": "État de formalisation (repository D1, D2, etc. ou 'non identifié')"
+              },
+              "risques_juridiques": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/RisqueJuridique"
+                },
+                "title": "Risques Juridiques",
+                "description": "Risques juridiques et recommandations"
+              },
+              "require_senior_review": {
+                "type": "boolean",
+                "title": "Require Senior Review",
+                "default": false,
+                "description": "Nécessite une relecture par un senior"
+              },
+              "require_technical_review": {
+                "type": "boolean",
+                "title": "Require Technical Review",
+                "default": false,
+                "description": "Nécessite une relecture technique"
+              },
+              "require_client_clarification": {
+                "type": "boolean",
+                "title": "Require Client Clarification",
+                "default": false,
+                "description": "Nécessite un éclaircissement de la part du client"
+              }
+            },
+            "description": "Enriched asset: full description, examples, exploits, valorisation, risks."
+          },
+          "RepositoryRow": {
+            "type": "object",
+            "title": "RepositoryRow",
+            "required": [
+              "id",
+              "logiciel",
+              "repository",
+              "path",
+              "description"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "title": "Id",
+                "description": "Identifiant dépôt (D1, D2, ...)"
+              },
+              "path": {
+                "type": "string",
+                "title": "Path",
+                "description": "Chemin dans le repo (à renseigner si inconnu)"
+              },
+              "logiciel": {
+                "type": "string",
+                "title": "Logiciel",
+                "description": "Nom du logiciel ou projet"
+              },
+              "repository": {
+                "type": "string",
+                "title": "Repository",
+                "description": "URL ou nom du repository (à renseigner si inconnu)"
+              },
+              "description": {
+                "type": "string",
+                "title": "Description",
+                "description": "Description courte"
+              }
+            },
+            "description": "One row of the repository table (D1, D2, ...)."
+          },
+          "RisqueJuridique": {
+            "type": "object",
+            "title": "RisqueJuridique",
+            "required": [
+              "risk_name",
+              "recommendation"
+            ],
+            "properties": {
+              "risk_name": {
+                "type": "string",
+                "title": "Risk Name",
+                "description": "Nom du risque (ex: brevet, licence, secret rompu)"
+              },
+              "recommendation": {
+                "type": "string",
+                "title": "Recommendation",
+                "description": "Recommandation associée"
+              }
+            },
+            "description": "Legal risk and recommendation."
+          },
+          "ValorisationItem": {
+            "type": "object",
+            "title": "ValorisationItem",
+            "required": [
+              "kind",
+              "text"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "enrichissement",
+                  "horizontal",
+                  "vertical"
+                ],
+                "type": "string",
+                "title": "Kind",
+                "description": "Type de valorisation"
+              },
+              "text": {
+                "type": "string",
+                "title": "Text",
+                "description": "Description de la valorisation"
+              }
+            },
+            "description": "One valorisation axis (enrichissement, horizontal, vertical)."
+          }
+        },
+        "title": "CartographieData",
+        "properties": {
+          "repos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/RepositoryRow"
+            },
+            "title": "Repos"
+          },
+          "assets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/AssetEnriched"
+            },
+            "title": "Assets"
+          },
+          "client": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/Client"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Client de la mission (objectifs de cartographie, entreprise ou non)."
+          },
+          "logiciels": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/Logiciel"
+            },
+            "title": "Logiciels",
+            "description": "Logiciels ou projets identifiés dans la cartographie."
+          },
+          "definitions": {
+            "type": "object",
+            "title": "Definitions",
+            "description": "Définitions (PPA, Concurrence déloyale, Contrat IN/OUT, etc.)",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "contributors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/Contributor"
+            },
+            "title": "Contributors",
+            "description": "Contributeurs du logiciel ou projet."
+          }
+        },
+        "description": "Full cartographie: assets, repos, optional definitions."
+      }
+    }
+  ],
+  "messages": []
+}

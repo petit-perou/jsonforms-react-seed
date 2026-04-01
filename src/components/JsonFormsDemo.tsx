@@ -9,8 +9,14 @@ import {
 } from '@jsonforms/material-renderers';
 import RatingControl from './RatingControl';
 import ratingControlTester from '../ratingControlTester';
-import schema from '../schema.json';
 import uischema from '../uischema.json';
+import cartographie_result from '../cartographie.json';
+
+console.log({ cartographie_result });
+
+const cartographie = cartographie_result.data[0].data;
+const cartographie_schema = cartographie_result.data[0].schema;
+const schema = cartographie_schema;
 
 const classes = {
   container: {
@@ -38,13 +44,7 @@ const classes = {
   },
 };
 
-const initialData = {
-  name: 'Send email to Adrian',
-  description: 'Confirm if you have passed the subject\nHereby ...',
-  done: true,
-  recurrence: 'Daily',
-  rating: 3,
-};
+const initialData = cartographie;
 
 const renderers = [
   ...materialRenderers,
@@ -84,7 +84,6 @@ export const JsonFormsDemo: FC = () => {
         <div style={classes.demoform}>
           <JsonForms
             schema={schema}
-            uischema={uischema}
             data={data}
             renderers={renderers}
             cells={materialCells}
